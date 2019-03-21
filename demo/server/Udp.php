@@ -23,7 +23,7 @@ $udp->on('connect', function ($udp, $fd,$reactor_id) {
 
 $udp->on('Packet',function ($udp,$data,$clientInfo){
    $udp->sendto($clientInfo['address'],$clientInfo['port'],"Server ".$data);
-   var_dump($clientInfo);exit();
+   var_dump($clientInfo);
 });
 
 //监听连接关闭事件
