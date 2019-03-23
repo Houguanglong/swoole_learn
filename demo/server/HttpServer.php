@@ -9,7 +9,8 @@ use Swoole\Http\Server;
 //创建http_server服务器 监听127.0.0.1:8811端口
 $http = new Server('0.0.0.0',8811);
 $http->on('request',function ($request,$response){
-    $response->end("<h1>Http-server</h1>");
+    print_r($request->get);
+    $response->end("<h1>Http-server</h1>".$request->get['age']);
 });
 
 $http->start();
